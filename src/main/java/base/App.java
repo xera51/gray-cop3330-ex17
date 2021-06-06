@@ -24,24 +24,65 @@ public class App {
         myApp.displayOutput(bac);
     }
 
+    //TODO try to refactor to reduce repeated code in read methods
     private int readGender() {
-        System.out.print("Enter a 1 is you are male or a 2 if you are female: ");
-        return Integer.parseInt(in.nextLine());
+        int d;
+        while(true) {
+            System.out.print("Enter a 1 is you are male or a 2 if you are female: ");
+            try {
+                d = Integer.parseInt(in.nextLine());
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a number.");
+                continue;
+            }
+            break;
+        }
+        return d;
     }
 
     private int readNumOuncesAlcohol() {
-        System.out.print("How many ounces of alcohol did you have? ");
-        return Integer.parseInt(in.nextLine());
+        int d;
+        while(true) {
+            System.out.print("How many ounces of alcohol did you have? ");
+            try {
+                d = Integer.parseInt(in.nextLine());
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a number.");
+                continue;
+            }
+            break;
+        }
+        return d;
     }
 
     private int readWeightPounds() {
-        System.out.print("What is your weight, in pounds? ");
-        return Integer.parseInt(in.nextLine());
+        int d;
+        while(true) {
+            System.out.print("What is your weight, in pounds? ");
+            try {
+                d = Integer.parseInt(in.nextLine());
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a number.");
+                continue;
+            }
+            break;
+        }
+        return d;
     }
 
     private int readHoursSinceDrink() {
-        System.out.print("How many hours has it been since your last drink? ");
-        return Integer.parseInt(in.nextLine());
+        int d;
+        while(true) {
+            System.out.print("How many hours has it been since your last drink? ");
+            try {
+                d = Integer.parseInt(in.nextLine());
+            } catch (NumberFormatException nfe) {
+                System.out.println("Please enter a number.");
+                continue;
+            }
+            break;
+        }
+        return d;
     }
 
     public double calculateBAC(int gender, int ounceAlcohol,
